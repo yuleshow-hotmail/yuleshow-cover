@@ -1,5 +1,11 @@
 # yuleshow-cover
 
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![Pillow](https://img.shields.io/badge/Pillow-PIL-8C4A2F?logo=python&logoColor=white)
+![OpenCC](https://img.shields.io/badge/OpenCC-繁→簡-FF6600)
+![Premiere Pro](https://img.shields.io/badge/Premiere%20Pro-MOGRT-9999FF?logo=adobepremierepro&logoColor=white)
+![YouTube](https://img.shields.io/badge/YouTube-Thumbnails-FF0000?logo=youtube&logoColor=white)
+
 YouTube thumbnail generator for **梅璽閣菜話** (Yule Show's Gourmet Chatting).
 
 ## Files
@@ -27,15 +33,15 @@ Untitled.mogrt
 
 | ID | Role | Default Value | Fill | Stroke | Font | Size |
 |----|------|---------------|------|--------|------|------|
-| 9 | Episode | 總第309集 | ![#000000](https://via.placeholder.com/12/000000/000000?text=+) Black | ![#FFFFFF](https://via.placeholder.com/12/FFFFFF/FFFFFF?text=+) White 3px | NotoSans**-Bold | 50 |
-| 6 | Slogan | Yule Show's Gourmet Chatting | ![#000000](https://via.placeholder.com/12/000000/000000?text=+) Black | ![#FFFFFF](https://via.placeholder.com/12/FFFFFF/FFFFFF?text=+) White 2px | HermanzTitling | 61 |
-| 8 | Series name | 上海老風味之一百廿七 | ![#FFFF00](https://via.placeholder.com/12/FFFF00/FFFF00?text=+) Yellow | ![#000000](https://via.placeholder.com/12/000000/000000?text=+) Black 10px | NotoSerif**-Black | dynamic |
-| 7 | Chinese title | 夜開花塞肉 | ![#FF0000](https://via.placeholder.com/12/FF0000/FF0000?text=+) Red | ![#FFFFFF](https://via.placeholder.com/12/FFFFFF/FFFFFF?text=+) White 8px | NotoSans**-Black | dynamic |
-| 3 | English title | Stuffed Bottle Gourd with Pork | ![#000000](https://via.placeholder.com/12/000000/000000?text=+) Black | ![#FFFFFF](https://via.placeholder.com/12/FFFFFF/FFFFFF?text=+) White 3px | Sanchez | dynamic |
-| 4 | TM symbol | ™ | ![#00FF00](https://via.placeholder.com/12/00FF00/00FF00?text=+) Green | ![#000000](https://via.placeholder.com/12/000000/000000?text=+) Black 4px | Arial Bold | 47 |
-| 5 | Brand (vertical) | 梅璽閣菜話 | ![#00FF00](https://via.placeholder.com/12/00FF00/00FF00?text=+) Green | ![#000000](https://via.placeholder.com/12/000000/000000?text=+) Black 6px | SentyWen (文徵明體) | 133 |
+| 9 | Episode | 總第309集 | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 3px | NotoSans**-Bold | 50 |
+| 6 | Slogan | Yule Show's Gourmet Chatting | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 2px | HermanzTitling | 61 |
+| 8 | Series name | 上海老風味之一百廿七 | ![](https://img.shields.io/badge/-%20-FFFF00) Yellow | ![](https://img.shields.io/badge/-%20-000000) Black 10px | NotoSerif**-Black | dynamic |
+| 7 | Chinese title | 夜開花塞肉 | ![](https://img.shields.io/badge/-%20-FF0000) Red | ![](https://img.shields.io/badge/-%20-FFFFFF) White 8px | NotoSans**-Black | dynamic |
+| 3 | English title | Stuffed Bottle Gourd with Pork | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 3px | Sanchez | dynamic |
+| 4 | TM symbol | ™ | ![](https://img.shields.io/badge/-%20-00FF00) Green | ![](https://img.shields.io/badge/-%20-000000) Black 4px | Arial Bold | 47 |
+| 5 | Brand (vertical) | 梅璽閣菜話 | ![](https://img.shields.io/badge/-%20-00FF00) Green | ![](https://img.shields.io/badge/-%20-000000) Black 6px | SentyWen (文徵明體) | 133 |
 
-> Canvas border: ![#00CC00](https://via.placeholder.com/12/00CC00/00CC00?text=+) `#00CC00` (60px inset)
+> Canvas border: ![](https://img.shields.io/badge/-%20-00CC00) `#00CC00` (60px inset)
 
 ### Fonts Referenced
 
