@@ -3,77 +3,74 @@
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Pillow](https://img.shields.io/badge/Pillow-PIL-8C4A2F?logo=python&logoColor=white)
 ![OpenCC](https://img.shields.io/badge/OpenCC-繁→簡-FF6600)
-![Premiere Pro](https://img.shields.io/badge/Premiere%20Pro-MOGRT-9999FF?logo=adobepremierepro&logoColor=white)
 ![YouTube](https://img.shields.io/badge/YouTube-Thumbnails-FF0000?logo=youtube&logoColor=white)
 
 YouTube thumbnail generator for **梅璽閣菜話** (Yule Show's Gourmet Chatting).
 
-## Files
+## Features
 
-| File | Description |
-|------|-------------|
-| `yuleshow-cover.py` | Interactive cover generator — prompts for episode number, series code, Chinese/English titles, finds a JPG in the current directory, and renders 3 variants (16:9 繁體, 16:9 簡體, 4:3 簡體) using PIL. Includes OpenCC traditional→simplified conversion. |
-| `mogrt-cover.py` | Reads text controls from `Untitled.mogrt`, optionally edits them, and renders covers using the same data. Can also write updated values back into the MOGRT. |
-| `doog` | Standalone single-episode cover script with hardcoded values. |
-| `Untitled.mogrt` | Premiere Pro Motion Graphics Template (MOGRT) — a ZIP containing `definition.json` (7 editable text controls), `project.prgraphic` (binary layout), and preview thumbnails. |
+- Interactive CLI — prompts for episode number, series code, Chinese/English titles
+- Renders **3 variants** per episode: 16:9 繁體, 16:9 簡體, 4:3 簡體
+- Automatic **Traditional → Simplified** Chinese conversion via OpenCC
+- Old-school Chinese numerals (廿、卅、卌)
+- Dynamic font sizing to fit text within bounds
+- Green border frame with layered text overlays
 
-## MOGRT Structure
+## Series Supported
 
-The `.mogrt` file is a ZIP archive with 4 internal files:
+| Code | 繁體 | 簡體 |
+|------|------|------|
+| 麵 | 麵和澆頭系列 | 面和浇头系列 |
+| 上 | 上海老風味 | 上海老风味 |
+| 西 | 家庭西餐 | 家庭西餐 |
+| 異 | 異域風味 | 异域风味 |
+| 瞎 | 閣主瞎燒燒 | 阁主瞎烧烧 |
+| 鹹 | 鹹泡飯 | 咸泡饭 |
 
-```
-Untitled.mogrt
-├── definition.json      # Editable text controls + metadata
-├── project.prgraphic    # Binary project (Adobe-proprietary)
-├── thumb.png            # Static preview (1422×800)
-└── thumb.mp4            # Video preview
-```
+## Text Layers
 
-### Editable Controls (from `definition.json`)
-
-| ID | Role | Default Value | Fill | Stroke | Font | Size |
-|----|------|---------------|------|--------|------|------|
-| 9 | Episode | 總第309集 | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 3px | NotoSans**-Bold | 50 |
-| 6 | Slogan | Yule Show's Gourmet Chatting | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 2px | HermanzTitling | 61 |
-| 8 | Series name | 上海老風味之一百廿七 | ![](https://img.shields.io/badge/-%20-FFFF00) Yellow | ![](https://img.shields.io/badge/-%20-000000) Black 10px | NotoSerif**-Black | dynamic |
-| 7 | Chinese title | 夜開花塞肉 | ![](https://img.shields.io/badge/-%20-FF0000) Red | ![](https://img.shields.io/badge/-%20-FFFFFF) White 8px | NotoSans**-Black | dynamic |
-| 3 | English title | Stuffed Bottle Gourd with Pork | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 3px | Sanchez | dynamic |
-| 4 | TM symbol | ™ | ![](https://img.shields.io/badge/-%20-00FF00) Green | ![](https://img.shields.io/badge/-%20-000000) Black 4px | Arial Bold | 47 |
-| 5 | Brand (vertical) | 梅璽閣菜話 | ![](https://img.shields.io/badge/-%20-00FF00) Green | ![](https://img.shields.io/badge/-%20-000000) Black 6px | SentyWen (文徵明體) | 133 |
+| Layer | Content | Fill | Stroke | Font | Size |
+|-------|---------|------|--------|------|------|
+| L1 | Episode (總第N集) | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 3px | NotoSans-Bold | 50 |
+| L2 | Slogan | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 2px | HermanzTitling | 61 |
+| L3 | Series name | ![](https://img.shields.io/badge/-%20-FFFF00) Yellow | ![](https://img.shields.io/badge/-%20-000000) Black 10px | NotoSerif-Black | dynamic |
+| L4 | Chinese title | ![](https://img.shields.io/badge/-%20-FF0000) Red | ![](https://img.shields.io/badge/-%20-FFFFFF) White 8px | NotoSans-Black | dynamic |
+| L5 | English title | ![](https://img.shields.io/badge/-%20-000000) Black | ![](https://img.shields.io/badge/-%20-FFFFFF) White 3px | Sanchez | dynamic |
+| L6 | TM symbol | ![](https://img.shields.io/badge/-%20-00FF00) Green | ![](https://img.shields.io/badge/-%20-000000) Black 4px | Arial Bold | 47 |
+| L7 | Brand (梅璽閣菜話) | ![](https://img.shields.io/badge/-%20-00FF00) Green | ![](https://img.shields.io/badge/-%20-000000) Black 6px | SentyWen (文徵明體) | 133 |
 
 > Canvas border: ![](https://img.shields.io/badge/-%20-00CC00) `#00CC00` (60px inset)
 
-### Fonts Referenced
+## Fonts Required
 
-| PostScript Name | Font File | Used For |
-|----------------|-----------|----------|
-| `Arial-BoldMT` | Arial Bold.ttf | TM symbol |
-| `HermanzTitling-Regular` | HermanzTitling Regular.otf | English slogan |
-| `NotoSansCJKTC-Bold` | NotoSansTC-Bold.ttf | Episode number |
-| `NotoSerifCJKTC-Black` | NotoSerifTC-Black.ttf | Series name |
-| `Sanchez-Regular` | Sanchez Regular.otf | English title |
-| `SentyWen` | 漢儀新蒂文徵明體.ttf | Brand 梅璽閣菜話 |
+| Font File | Used For |
+|-----------|----------|
+| NotoSansTC-Bold.ttf / NotoSansSC-Bold.ttf | Episode number |
+| NotoSerifTC-Black.ttf / NotoSerifSC-Black.ttf | Series name |
+| NotoSansTC-Black.ttf / NotoSansSC-Black.ttf | Chinese title |
+| HermanzTitling Regular.otf | English slogan |
+| Sanchez Regular.otf | English title |
+| Arial Bold.ttf (system) | TM symbol |
+| 漢儀新蒂文徵明體.ttf | Brand 梅璽閣菜話 |
 
-### Limitations
-
-The visual layout (positions, font sizes, colors, strokes, layer hierarchy) is encoded in the binary `project.prgraphic` and can only be rendered by Adobe Premiere Pro or After Effects. The JSON only exposes text values and font names — not styling or positioning.
+Fonts must be installed in `~/Library/Fonts/`.
 
 ## Dependencies
 
-```
+```bash
 pip install Pillow opencc-python-reimplemented
 ```
-
-Fonts must be installed locally (see paths in the scripts).
 
 ## Usage
 
 ```bash
-# Interactive mode — prompts for episode info
 python3 yuleshow-cover.py
-
-# From MOGRT data
-python3 mogrt-cover.py
 ```
 
-Place a `.jpg` photo in the same directory before running. Outputs are saved as `OUT_*.png`.
+Place a `.jpg` photo in the same directory before running. The script will prompt for:
+1. **總集數** — episode number (e.g. `309`)
+2. **系列代碼** — series code + number (e.g. `上127`)
+3. **中文主標** — Chinese title (use `\n` for line breaks)
+4. **英文主標** — English title (use `\n` for line breaks)
+
+Outputs are saved as `OUT_*.png`.
